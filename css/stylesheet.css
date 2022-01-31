@@ -4,9 +4,10 @@
 :root {
     --bg-pink: #b63283;    
 
-    --fs-s: 11px;    
-    --fs-m: 14px;
-    --fs-title: 45px;
+    --fs-s: 1rem;    
+    --fs-m: 2rem;
+    --fs-l: 4rem;
+    --fs-xl: 10rem;
 
     
     --fw-p: 500;
@@ -19,17 +20,39 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: var(--ff-fira);
 }
 
 
-body{    
+body{   
+    
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 0, 170);
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     height: 100vh;
     width: 100vw;
 }
+/*
+.art-1{
+    position: absolute;
+    font-size: 9rem;
+    animation: chicken 6s forwards infinite
 
+}
+
+@keyframes chicken{
+    from{
+    top: 0;
+    left: -10%;
+    transform: rotate(0deg);
+}to{
+    top: 24rem;
+    left: 100%;
+    transform: rotate(56deg);
+}
+}
+*/
 .flex{
     display: flex;
 }
@@ -38,12 +61,151 @@ body{
     flex-direction: column;   
     align-items: center;
     width: 1000px;
-    height: 800px;
-    background-color: rgb(112, 28, 80);
+    height: 850px;
+    background: rgb(41, 70, 216);    
 }
+
+
+/* ------------------------ WIN Box START --------------------------*/
+
+.win__box{
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.616);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed; 
+    display:none ;
+          
+}
+.win__word{
+    font-size: var(--fs-xl);
+    color: white;
+
+}
+.win__text{
+    font-size: var(--fs-l);
+    color: white;
+
+}
+.win__info{
+    color: white;
+    margin:1rem 0 2rem 0;
+}
+.show {
+    display: flex;
+}
+.hide{
+    display: none;
+}
+
+
+/* ------------------------ WIN Box END --------------------------*/
+
+
+/* ------------------------ Figure Box START --------------------------*/
+
 .figure__box{
     margin: .3rem;
     width: 40rem;
     height: 30rem;
+   /* background-color: violet;*/
 }
 
+/* ------------------------ Figure Box END --------------------------*/
+
+
+/* ------------------------ Guesses Box START --------------------------*/
+
+.guesses__box{
+    justify-content: center;
+    font-size: var(--fs-m);
+    color: white;
+}
+
+/* ------------------------ Guesses Box START --------------------------*/
+
+
+
+/* --------------------- INPUT LETTER true START -----------------------*/
+
+
+
+.letter__box__true{   
+    justify-content: center;
+    gap: .2rem;      
+    margin: .5rem 0 .5rem 0;    
+}
+
+
+.input__letter__true{
+        
+    width: 5rem;
+    height: 5rem;
+    font-size: var(--fs-l);    
+    justify-content: center;
+    align-items: center;  
+    color: white;
+    background-color: rgba(255, 255, 255, 0.151);        
+}
+
+
+/* ------------------------ INPUT LETTER true END --------------------------*/
+
+
+/* ------------------------ INPUT LETTER false END --------------------------*/
+.letter__box__false{
+    justify-content: center;
+    gap: .2rem;   
+    margin: .5rem 0 .5rem 0; 
+    width: 100%; 
+}
+
+.input__letter__false{
+    
+    text-decoration: line-through;
+    text-decoration-color: rgb(255, 255, 255);    
+    font-size: var(--fs-m);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;   
+    background-color: rgba(255, 255, 255, 0.055);  
+       
+}
+
+/* ------------------------ INPUT LETTER false END --------------------------*/
+
+
+
+
+.info__box{    
+    font-size: var(--fs-s);
+    color: white;
+}
+
+.restart__btn{
+    font-size: var(--fs-m);
+    padding: 1rem 3rem 1rem 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 5px 5px  rgba(0, 0, 0, 0.418);
+    background-color: rgb(205, 50, 50);
+    color: white;
+}
+
+
+
+
+.wrapper .figure__box svg > * {
+    opacity: 0;
+}
+
+.wrapper .figure__box svg #ground             { opacity: 1; }
+.wrapper .figure__box.scaffold svg #scaffold  { opacity: 1; }
+.wrapper .figure__box.head     svg #head      { opacity: 1; }
+.wrapper .figure__box.body     svg #body      { opacity: 1; }
+.wrapper .figure__box.arms     svg #arms      { opacity: 1; }
+.wrapper .figure__box.legs     svg #legs      { opacity: 1; }
