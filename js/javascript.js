@@ -48,6 +48,7 @@ function guessedletters(str) {
     let test = false;
     for(let i = 0; i < pressedKeys.length +1; i++){
         if(pressedKeys[i] == str){
+            test = false
             return test;
         } else {
             pressedKeys.push(str)
@@ -104,6 +105,6 @@ document.addEventListener('keydown', (evt) => {
         if(correctGuessed < 1) {
             paintImg()
         }
-        correctGuessed = 0;
+    correctGuessed = 0;
     }
 })
