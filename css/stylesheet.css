@@ -47,4 +47,8 @@ body{
     width: 40rem;
     height: 30rem;
 }
+.figure__box svg {
+    height:100%;
+    
+}
 
