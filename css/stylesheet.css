@@ -1,11 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Frank+Ruhl+Libre:wght@400;500;600;700;900&display=swap');
+
+
+:root {
+    --bg-pink: #b63283;    
+
+    --fs-s: 11px;    
+    --fs-m: 14px;
+    --fs-title: 45px;
+
+    
+    --fw-p: 500;
+    --fw-title: 900;
+
+    --ff-fira: 'Fira Sans', sans-serif;
+    --ff-frank: 'Frank Ruhl Libre', serif;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
 }
-:root{
 
 
-}
 body{    
     justify-content: center;
     align-items: center;
@@ -32,10 +48,3 @@ body{
     height: 30rem;
 }
 
-.input__letter{
-    
-    border: none;
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-}
