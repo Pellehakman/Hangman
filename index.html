@@ -9,17 +9,80 @@
 </head>
 <body class="flex">
 
-    <div class="flex wrapper">
+    <!--<div class="art-1">🐥</div>
 
-        <div class="figure__box">
-            
+<!-------- Win Box Start -------->
+
+    <div class="flex win__box">
+        <span class="win__word">HÄXA!</span>
+        <span class="win__text">GRATTIS!</span>
+        <span class="win__info">Vill du spela igen?</span>
+        <button class="restart__btn">Börja om!</button>
+    </div>
+
+<!-------- Win Box End -------->
+
+    <div class="flex wrapper">
+       
+<!-------- Wrapper Start -------->
+
+        <!--Figure Start -->
+        <div class="figure__box"></div>
+        <!--Figure End -->
+
+
+<!--guesses Start -->
+        
+        <div class="flex guesses__box">
+            <p>
+                <span class="guesses__info">Återstående försök:</span> <span class="guesses__quant">5</span>
+            </p>
+        </div>
+
+<!--guesses End -->
+
+
+<!--Letter True Start -->
+
+        <div class="flex letter__box__true">
+
 
         </div>
-         hej
-       
+
+        
+<!--Letter True End -->
+        
+    
+<!--Letter false Start -->
+    
+        <div class="flex letter__box__false"> 
+            <div class="flex input__letter__false">
+                <span id="">B</span>
+            </div>   
+            <div class="flex input__letter__false">
+                <span id="">U</span>
+            </div> 
+            <div class="flex input__letter__false">
+                <span id="">F</span>
+            </div> 
+            
+             
+        </div>
+
+<!--Letter false End -->
 
 
+<!--info Start -->
 
+        <button class="restart__btn get-word">Börja om!</button>
+
+        <div class="info__box">
+            <span>Press any button start the game</span>
+        </div>
+
+<!--info End -->
+
+<!-------- Wrapper End -------->
     </div>
     
 </body>
