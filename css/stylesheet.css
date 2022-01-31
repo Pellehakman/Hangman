@@ -62,9 +62,18 @@ body{
     align-items: center;
     width: 1000px;
     height: 850px;
-    background: rgb(41, 70, 216);    
+    background: rgb(41, 70, 216);  
+    
+    
 }
 
+/*.wrapper__img{
+    opacity: 20%;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    z-index: 0;
+}
 
 /* ------------------------ WIN Box START --------------------------*/
 
@@ -80,9 +89,28 @@ body{
     display:none ;
           
 }
+
+.end__box{
+    backdrop-filter: blur(5px);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.616);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed; 
+    display:none ;
+          
+}
 .win__word{
     font-size: var(--fs-xl);
     color: white;
+
+}
+
+.end__word{
+    font-size: var(--fs-xl);
+    color: rgb(255, 255, 255);
 
 }
 .win__text{
