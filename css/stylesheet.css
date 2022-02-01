@@ -6,6 +6,7 @@
 
     --fs-s: 1rem;    
     --fs-m: 2rem;
+    --fs-ml: 3rem;
     --fs-l: 4rem;
     --fs-xl: 10rem;
 
@@ -43,16 +44,21 @@ body{
     flex-direction: column;   
     align-items: center;
     width: 1000px;
-    height: 850px;
-    /*background: rgb(41, 70, 216);*/  
+    height: 950px;
+    /*background: rgb(41, 70, 216);*/
    
     
 }
 .theme{
+    flex-direction: column;
+    align-items: center;
     color: white;
     font-size: var(--fs-l);
     margin: 1rem 0 .3rem 0 ;
     
+}
+.countdown{
+    font-size: var(--fs-m);
 }
 
 
@@ -148,16 +154,16 @@ body{
 
 .letter__box__true{   
     justify-content: center;
-    gap: .2rem;      
+    gap: .4rem;      
     margin: .5rem 0 .5rem 0;    
 }
 
 
 .input__letter__true{
         
-    width: 5rem;
-    height: 5rem;
-    font-size: var(--fs-l);    
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: var(--fs-ml);    
     justify-content: center;
     align-items: center;  
     color: white;
@@ -171,7 +177,7 @@ body{
 /* ------------------------ INPUT LETTER false END --------------------------*/
 .letter__box__false{
     justify-content: center;
-    gap: .2rem;   
+    gap: .4rem;   
     margin: 0 0 .5rem 0; 
     width: 100%; 
 }
