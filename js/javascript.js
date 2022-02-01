@@ -8,7 +8,7 @@ const getWord = document.querySelector('.get-word');
 const randomWords =  ['påsk', 'hare', 'godis', 'häxa', 'ägg'];
 
 
- //Lite grund variabler, bra att ha functioner i spelet efter flödesschemat 
+//Lite grund variabler, bra att ha functioner i spelet efter flödesschemat 
 
 let randomWord = '';
 let correctGuessed = 0;
@@ -77,7 +77,7 @@ function paintImg() {
     setTimeout( () => {
         document.querySelector('.end__word').innerHTML = randomWord;
         document.querySelector('.end__box').classList.add('show')
-    }, 1000)
+    }, 1500)
     }
 }
 
