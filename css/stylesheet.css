@@ -21,6 +21,7 @@
     box-sizing: border-box;
     margin: 0;
     font-family: var(--ff-fira);
+    
 }
 
 
@@ -33,26 +34,7 @@ body{
     height: 100vh;
     width: 100vw;
 }
-/*
-.art-1{
-    position: absolute;
-    font-size: 9rem;
-    animation: chicken 6s forwards infinite
 
-}
-
-@keyframes chicken{
-    from{
-    top: 0;
-    left: -10%;
-    transform: rotate(0deg);
-}to{
-    top: 24rem;
-    left: 100%;
-    transform: rotate(56deg);
-}
-}
-*/
 .flex{
     display: flex;
 }
@@ -62,18 +44,17 @@ body{
     align-items: center;
     width: 1000px;
     height: 850px;
-    background: rgb(41, 70, 216);  
+    /*background: rgb(41, 70, 216);*/  
+   
     
+}
+.theme{
+    color: white;
+    font-size: var(--fs-l);
+    margin: 1rem 0 .3rem 0 ;
     
 }
 
-/*.wrapper__img{
-    opacity: 20%;
-    bottom: 20px;
-    right: 20px;
-    position: fixed;
-    z-index: 0;
-}
 
 /* ------------------------ WIN Box START --------------------------*/
 
@@ -86,9 +67,8 @@ body{
     align-items: center;
     flex-direction: column;
     position: fixed; 
-    display:none ;
-          
-}
+    display:none ; 
+    }
 
 .end__box{
     backdrop-filter: blur(5px);
@@ -136,10 +116,15 @@ body{
 /* ------------------------ Figure Box START --------------------------*/
 
 .figure__box{
+    justify-content: center;
     margin: .3rem;
     width: 40rem;
     height: 30rem;
-   /* background-color: violet;*/
+   /*background-color: violet;*/
+}
+.figure-svg{
+    
+    width: 20rem;
 }
 
 /* ------------------------ Figure Box END --------------------------*/
@@ -187,16 +172,17 @@ body{
 .letter__box__false{
     justify-content: center;
     gap: .2rem;   
-    margin: .5rem 0 .5rem 0; 
+    margin: 0 0 .5rem 0; 
     width: 100%; 
 }
 
 .input__letter__false{
     
-    text-decoration: line-through;
+    /*text-decoration: line-through;
     text-decoration-color: rgb(255, 255, 255);    
+    */
     font-size: var(--fs-m);
-    color: white;
+    color: rgba(255, 255, 255, 0.263);
     justify-content: center;
     align-items: center;
     width: 3rem;
@@ -211,6 +197,7 @@ body{
 
 
 .info__box{    
+    margin: 2rem;
     font-size: var(--fs-s);
     color: white;
 }
@@ -218,8 +205,8 @@ body{
 .restart__btn{
     font-size: var(--fs-m);
     padding: 1rem 3rem 1rem 3rem;
-    margin-bottom: 3rem;
-    box-shadow: 5px 5px  rgba(0, 0, 0, 0.418);
+    
+    box-shadow: 5px 5px  rgba(0, 0, 0, 0.137);
     background-color: rgb(205, 50, 50);
     color: white;
 }
