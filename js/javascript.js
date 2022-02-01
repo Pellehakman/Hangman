@@ -14,7 +14,7 @@ let randomWord = '';
 let correctGuessed = 0;
 let guessesLeft = 5;
 let numberOfCorrectGuesses = 0;
-let pressedKeys = [];  // Gissat på (generelt)
+let pressedKeys = [];  // Gissat på bokstav genom nedtryckt knapp
 let guessedKeyIncorrect = []; // Gissat bokstav (fel)
 
 
