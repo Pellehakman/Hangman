@@ -191,7 +191,7 @@ function startTimer() {
 
 function restart() {
     startStopCounter = false;
-    counter = 10;
+    counter = 60;
     id.innerHTML = counter;
     
     man.classList.remove('scaffold') 
