@@ -22,18 +22,20 @@
     box-sizing: border-box;
     margin: 0;
     font-family: var(--ff-fira);
+    user-select: none;
+    
     
 }
 
 
 body{   
-    
     justify-content: center;
     align-items: center;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .flex{
@@ -49,7 +51,25 @@ body{
    
     
 }
+.chick{
+    opacity: 10%;
+    position: absolute;
+    font-size: 10rem;
+    animation: chicken .6s forwards infinite linear;
+}
+@keyframes chicken {
+    from{
+        bottom: 0rem;
+        right: 0%;
+    }
+    to{
+        bottom: 0rem;
+        right: 100%;
+    }
+}
+
 .theme{
+    text-shadow:0px 10px 5px  rgba(0, 0, 0, 0.164); 
     flex-direction: column;
     align-items: center;
     color: white;
@@ -65,7 +85,8 @@ body{
 /* ------------------------ WIN Box START --------------------------*/
 
 .win__box{
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.616);
@@ -73,11 +94,14 @@ body{
     align-items: center;
     flex-direction: column;
     position: fixed; 
-    display:none ; 
-    }
+    top: 0;
+    left: 0;
+    display: none; 
+}
 
 .end__box{
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.616);
@@ -85,8 +109,9 @@ body{
     align-items: center;
     flex-direction: column;
     position: fixed; 
-    display:none ;
-          
+    top: 0;
+    left: 0;
+    display: none;
 }
 .win__word{
     font-size: var(--fs-xl);
@@ -169,7 +194,9 @@ body{
     color: white;
     background-color: rgba(255, 255, 255, 0.151);        
 }
-
+.input__letter__true:hover{
+    background-color: rgba(255, 255, 255, 0.171); 
+}
 
 /* ------------------------ INPUT LETTER true END --------------------------*/
 
@@ -180,6 +207,7 @@ body{
     gap: .4rem;   
     margin: 0 0 .5rem 0; 
     width: 100%; 
+    height: 3rem
 }
 
 .input__letter__false{
@@ -209,12 +237,27 @@ body{
 }
 
 .restart__btn{
+    user-select: none;
     font-size: var(--fs-m);
     padding: 1rem 3rem 1rem 3rem;
-    
+    border: none;    
     box-shadow: 5px 5px  rgba(0, 0, 0, 0.137);
-    background-color: rgb(205, 50, 50);
+    background-color: rgb(252,70,107,1);
     color: white;
+}
+
+.restart__btn:hover {
+    transition: .2s;
+    background-color: rgb(228, 64, 97);
+    cursor: pointer;
+}
+
+.restart__btn:active {
+    
+  background-color: rgb(212, 66, 95);
+  box-shadow: 5px 5px  rgba(0, 0, 0, 0.137);
+  transform: translateY(4px);
+  cursor: pointer;
 }
 
 
