@@ -100,7 +100,6 @@ function paintImg() { //Paints the hangman picture
     setTimeout( () => { // Display that u lost
         document.querySelector('.end__word').innerHTML = randomWord;
         document.querySelector('.end__box').classList.add('show')
-        endTimer();
     }, 1500)
     }
 }
@@ -117,9 +116,10 @@ function testWon(str) { //Adds score and determine if u won
             if(str == randomWord[j]) {
                 correctGuesses.push(str);
                 if(correctGuesses.length == randomWord.length) {
+                setTimeout( () => {
                     document.querySelector('.win__word').innerHTML = randomWord;
                     document.querySelector('.win__box').classList.add('show');
-                    endTimer();
+                }, 1500);
                 }
             }
         }
@@ -145,7 +145,7 @@ document.addEventListener('keydown', (evt) => { //Register keystroke
             if(dataLetter == guessedLetter){
                 letter.firstChild.classList.remove('hide');
                 correctGuessed++;
-                testWon(guessedLetter)
+                testWon(guessedLetter);
             }
         }
         if(correctGuessed < 1) {
@@ -175,6 +175,7 @@ function startTimer() {
             endTimer();
         }
     }, 1000) 
+
     function endTimer() {
         clearInterval(timerIntervalId);
     }
