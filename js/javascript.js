@@ -14,7 +14,7 @@ const randomWords =  ['påsk', 'hare', 'godis', 'häxa', 'ägg'];
 
 //Lite grund variabler, bra att ha functioner i spelet efter flödesschemat 
 
-let counter = 10;
+let counter = 60;
 let startStopCounter = false;
 let randomWord = '';
 let correctGuessed = 0;
@@ -32,16 +32,16 @@ function generateRandomWord(){
     randomWord = randomWords[random];
     correctGuesses = [];
     pressedKeys = [];
-    showWord(randomWord)
-    console.log(randomWord)
+    showWord(randomWord);
+    console.log(randomWord);
 ;}
 
 getWord.addEventListener('click', () => {
-    generateRandomWord()
+    generateRandomWord();
 })
 
 function showWord(word){ //Adds HTML code of the random Word
-    const letterBox = document.querySelector('.letter__box__true')
+    const letterBox = document.querySelector('.letter__box__true');
     letterBox.innerHTML = '';
     falseBox.innerHTML = '';
 
@@ -54,9 +54,9 @@ function showWord(word){ //Adds HTML code of the random Word
 function testLetter(str) { // Testing letters
     const test = /[a-öA-Ö]/.test(str);
     if(str.length > 1) {
-        alert('Please enter an alphabetic character')
+        alert('Please enter an alphabetic character');
     } else if (test == false){
-        alert('Please enter an alphabetic character')
+        alert('Please enter an alphabetic character');
     } else {
         return /[a-öA-Ö]/.test(str);
     }
@@ -66,14 +66,14 @@ function guessedletters(str) { // Testing letters
     let test = true;
     for(let i = 0; i < pressedKeys.length +1; i++){
         if(pressedKeys[i] == str){
-            alert('You can´t press the same key twice')
-            test = false
+            alert('You can´t press the same key twice');
+            test = false;
             return test;
         }
     }
     if(test == true) {
         pressedKeys.push(str);
-        return test
+        return test;
     }
 }
 
@@ -87,19 +87,20 @@ function paintImg() { //Paints the hangman picture
     guessesLeft = guessesLeft - 1;
     triesLeft.innerHTML = guessesLeft;
     if(guessesLeft == 4){
-        man.classList.add('scaffold')
+        man.classList.add('scaffold');
     } else if (guessesLeft == 3){
-        man.classList.add('head')
+        man.classList.add('head');
     } else if (guessesLeft == 2){
-        man.classList.add('body')
+        man.classList.add('body');
     } else if (guessesLeft == 1){
-        man.classList.add('arms')
+        man.classList.add('arms');
     } else if (guessesLeft == 0){
-        man.classList.add('legs')
+        man.classList.add('legs');
         
     setTimeout( () => { // Display that u lost
         document.querySelector('.end__word').innerHTML = randomWord;
         document.querySelector('.end__box').classList.add('show')
+        endTimer();
     }, 1500)
     }
 }
@@ -108,17 +109,17 @@ function testWon(str) { //Adds score and determine if u won
     let notFound = true;
     for(let i = 0; i < correctGuesses.length + 1; i++) {
         if(str == correctGuesses[i]) {
-            notFound = false
+            notFound = false;
         }
     }
     if(notFound == true) {
         for(let j = 0; j < randomWord.length; j++) {
             if(str == randomWord[j]) {
-                correctGuesses.push(str)
-                console.log(correctGuesses)
+                correctGuesses.push(str);
                 if(correctGuesses.length == randomWord.length) {
                     document.querySelector('.win__word').innerHTML = randomWord;
-                    document.querySelector('.win__box').classList.add('show')
+                    document.querySelector('.win__box').classList.add('show');
+                    endTimer();
                 }
             }
         }
@@ -132,15 +133,13 @@ document.addEventListener('keydown', (evt) => { //Register keystroke
     let checkPressed = guessedletters(guessedLetter);
     let dataLetter = '';
 
-    if (startStopCounter == false) {
-        startTimer(); 
-    }
-
-    startStopCounter = true;
-
     let letters = document.querySelectorAll('.input__letter__true');
     console.log(checkAlpha, checkPressed)
     if(checkAlpha == true && checkPressed == true) { // checks if pressed key is neither a non alphabetic letter or has been used before
+        if (startStopCounter == false) {
+            startTimer(); 
+        }
+        startStopCounter = true;
         for(let letter of letters) {
             dataLetter = letter.firstChild.getAttribute('data-letter');
             if(dataLetter == guessedLetter){
@@ -158,7 +157,6 @@ document.addEventListener('keydown', (evt) => { //Register keystroke
     }
 })
 console.log(randomWord)
-console.log()
 generateRandomWord(randomWord)
 
 
@@ -171,21 +169,25 @@ function startTimer() {
     
             id = document.getElementById('count');
             id.innerHTML = counter;
-        } else if (counter <= 0) { // Display that u lost
+        } else if (counter <= 0 && correctGuesses.length != randomWord.length && guessesLeft > 0) { // Display that u lost
             document.querySelector('.end__word').innerHTML = randomWord;
             document.querySelector('.end__box').classList.add('show')
+            endTimer();
         }
     }, 1000) 
-    getWord.addEventListener('click', () =>{
+    function endTimer() {
         clearInterval(timerIntervalId);
+    }
+    getWord.addEventListener('click', () =>{
+        endTimer();
         restart();
     })
-}
-
     for(let i = 0; i < restartButton.length; i++){
-    restartButton[i].addEventListener('click', () => {
-        totalRestart()
-    })
+        restartButton[i].addEventListener('click', () => {
+            endTimer();
+            totalRestart()
+        })
+    }
 }
 
 
